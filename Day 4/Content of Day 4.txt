@@ -1,0 +1,11 @@
+- aggregate functions & group by
+
+- sub queries
+
+- union family
+
+- numermic, decimal, string,  character, date&time  dataTypes
+
+- Enhanced ERD (inheritance).
+
+
