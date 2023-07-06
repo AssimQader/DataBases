@@ -1,0 +1,11 @@
+- Cursor 
+
+- Types of Backups 
+
+- Identity ==> On & Off 
+
+- Sequence
+
+- Snapshot 
+
+- Ship Transaction Log
