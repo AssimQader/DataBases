@@ -1,0 +1,3 @@
+CompanyWizard.bak  is a backup of the database I created using Wizard of Microsoft sql server only. .
+
+ALWYAS PUT BAKUPS IN D: PARTITION :) 
