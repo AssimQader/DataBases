@@ -1,0 +1,11 @@
+- normalization
+
+-  join statments
+
+- functions to deal with null values
+
+- concatination
+
+- searching using "like" statement
+
+- dealing with date
