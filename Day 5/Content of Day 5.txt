@@ -1,0 +1,21 @@
+- Setup , Default instance & Named instance
+
+- Authentication & Authorization
+
+- Execution Order in SQL Mangment Studio
+
+- DataBase Schema
+
+- Full Path of quering table: [ServerName].[DBName].[SchemaName].[TableName] 
+
+- SELECT INTO  &  INSERT INTO
+
+- TOP statment 
+
+- GUID (Global Uniqe Identifire)   ==>  newid() function
+
+- Ranking Functions
+
+- Time and Date Formats
+
+- String Functions
