@@ -1,0 +1,7 @@
+- Index (clustered, non-clustered)
+
+- View (standared, partitioned, indexed)
+
+- Types Of Tables (variable table, temporary table)
+
+- Merge
