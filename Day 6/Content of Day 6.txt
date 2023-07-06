@@ -1,0 +1,16 @@
+- File Grouping
+
+- Default values for columns  (with wizared)
+
+- Computed Column-driven attribute  (with Wizared)
+
+- Delete and Update specification(cascade, set NULL, set Default, No Action)   (with Wizared)
+
+- DataBase Integrity
+
+-  create constraints(check, pk, fk, unique)
+
+- creat Rule(sp_bindrule rule) , default(sp_bindefault def1),  new datatype(sp_addtype loc)
+
+
+
