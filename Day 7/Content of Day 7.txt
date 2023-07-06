@@ -1,0 +1,19 @@
+- variables
+ 
+- if condition , if exits()  ,   if not exists() , iff function()
+
+- try ... catch
+
+- while loop
+
+- case 
+     when ........ then  
+   end 
+
+- windowing functions
+
+- User-Defined Functions(scalar, inline, multi) 
+
+- Batch, Script, Transaction
+
+- dynamic query(execute keyword)
