@@ -38,11 +38,11 @@ alter proc GENERATE_EXAM @exam_ID int, @course_name varchar(50), @TFnum int , @C
 as 
 	declare @courseID int --variable stores the courseID.
 	select @courseID = ID from Course where Name = @course_name
-
+	
 	--create the exam and define the target course in "Exam" table.
 	insert into Exam
 	values(@exam_ID , @courseID)
-
+	
 	--generate random questions for each exam, and store them in "Exam_Quest" table.
 	begin try
 		begin transaction
@@ -52,70 +52,70 @@ as
 			from QuestionV2 
 			where Type = 'tf' and Course_ID = @courseID
 			order by newid()
-
-
+	
+	
 			select Top(@CHnum)ID
 			into #MCQQuestions
 			from QuestionV2 
 			where Type = 'ch' and Course_ID = @courseID
 			order by newid() 
 		*/
-
+	
 			while @TFnum != 0
+			begin
+				declare @quest_id int  --variable stores eustion id in each loop.
+			
+			/*this loop is to prevent the repeatation of any question in the exam, 
+			  NEWID() may give u the same result twice because it chooses randomly.*/
+				declare @flag int = 0
+				while @flag = 0 
 				begin
-					declare @quest_id int  --variable stores eustion id in each loop.
-				
-				/*this loop is to prevent the repeatation of any question in the exam, 
-				  NEWID() may give u the same result twice because it chooses randomly.*/
-					declare @flag int = 0
-					while @flag = 0 
-						begin
-							select @quest_id = ID
-							from QuestionV2
-							where Type = 'tf' and Course_ID = @courseID 
-							order by NEWID()
+					select @quest_id = ID
+					from QuestionV2
+					where Type = 'tf' and Course_ID = @courseID 
+					order by NEWID()
 
-							if not exists(select Quest_ID from Exam_Quest where Quest_ID = @quest_id)
-								set @flag += 1
-						end 
-
-					--insert the exam ID and each question for this exam in "Exam_Quest" table.
-					insert into Exam_Quest
-					values(@exam_ID , @quest_id)
-
-					set @TFnum -= 1		---- like counter--;
-				end
-
-
-
-			while @CHnum != 0
-				begin
-					declare @quest_id2 int
-
-					declare @flag2 int = 0
-					while @flag2 = 0
-						begin
-							select @quest_id2 = ID
-							from QuestionV2
-							where Type = 'ch' and Course_ID = @courseID 
-							order by NEWID()
-
-							if not exists(select Quest_ID from Exam_Quest where Quest_ID = @quest_id2)
-								set @flag2 += 1
-						end 
-
-					insert into Exam_Quest
-					values(@exam_ID ,  @quest_id2 )
-
-					set @CHnum -= 1
+					if not exists(select Quest_ID from Exam_Quest where Quest_ID = @quest_id)
+						set @flag += 1
 				end 
 
+				--insert the exam ID and each question for this exam in "Exam_Quest" table.
+				insert into Exam_Quest
+				values(@exam_ID , @quest_id)
 
+				set @TFnum -= 1		---- like counter--;
+			end
+
+	
+	
+			while @CHnum != 0
+			begin
+				declare @quest_id2 int
+
+				declare @flag2 int = 0
+				while @flag2 = 0
+				begin
+					select @quest_id2 = ID
+					from QuestionV2
+					where Type = 'ch' and Course_ID = @courseID 
+					order by NEWID()
+
+					if not exists(select Quest_ID from Exam_Quest where Quest_ID = @quest_id2)
+						set @flag2 += 1
+				end 
+
+				insert into Exam_Quest
+				values(@exam_ID ,  @quest_id2 )
+
+				set @CHnum -= 1
+			end 
+	
+	
 			--Show the exam after creation.
 			select EQ.* , Q.Body , Q.Type , Q.Mark
 			from Exam_Quest EQ inner join QuestionV2 Q
 			on EQ.Quest_ID = Q.ID and Exam_ID = @exam_id
-
+	
 		commit
 	end try
 	begin catch
