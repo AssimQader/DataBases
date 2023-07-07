@@ -240,7 +240,7 @@ as
 
 
 
-		-- 3)
+	-- 3)
 create proc INSTRUCTOR_DATA  @InstructorID int
 as
 	select C.Name as 'Course Name' , COUNT(SC.Stud_ID) as 'Number of Students'
@@ -252,7 +252,7 @@ as
 
 
 
-		-- 4)
+	-- 4)
 create proc EXAM_QUESTIONS @examID int
 as
 	select EQ.Exam_ID, Q.Body as 'Question'
@@ -261,7 +261,7 @@ as
 
 
 
-		-- 5)
+	-- 5)
 create proc STUDENT_ANSWERS @examID int , @studentID int
 as
 	select Q.Body as 'Question', ES.Stud_Answer as 'Student Answer'
