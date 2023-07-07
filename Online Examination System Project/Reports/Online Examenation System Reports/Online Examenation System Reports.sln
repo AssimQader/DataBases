@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "OES Reports", "OES Reports\OES Reports.rptproj", "{03658FDF-72DD-4840-A95B-5FA08DE6D651}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.Debug|Default.ActiveCfg = Debug
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.Debug|Default.Build.0 = Debug
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.Debug|Default.Deploy.0 = Debug
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.DebugLocal|Default.Build.0 = DebugLocal
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.Release|Default.ActiveCfg = Release
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.Release|Default.Build.0 = Release
+		{03658FDF-72DD-4840-A95B-5FA08DE6D651}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA2AFE23-D8BB-49E9-AC9D-8CBE5D8058EF}
+	EndGlobalSection
+EndGlobal
